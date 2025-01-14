@@ -5,7 +5,7 @@ import Footer from './../Footer/Footer.jsx';
 function Layout({ children }) {
   return (
     <>
-      <Header />
+      <Header cartItemsCount={1} />
       <main>{children}</main>
       <Footer />
     </>
