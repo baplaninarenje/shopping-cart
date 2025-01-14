@@ -1,27 +1,24 @@
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import LinkItem from './LinkItem';
 
-function Links({ cartItemsCount }) {
+function Links({ linkItems }) {
   return (
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/products">Products</Link>
-      </li>
-      <li>
-        <Link to="/cart">
-          <span>Cart</span>
-          <div className="cart-icon">{cartItemsCount}</div>
-        </Link>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        {linkItems.map(({ to, children }) => {
+          return (
+            <LinkItem key={to} to={to}>
+              {children}
+            </LinkItem>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }
 
 Links.propTypes = {
-  cartItemsCount: PropTypes.number.isRequired,
+  linkItems: PropTypes.array.isRequired,
 };
 
 export default Links;

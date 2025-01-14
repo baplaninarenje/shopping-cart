@@ -1,25 +1,29 @@
-import { Link } from 'react-router-dom';
+import Links from '../Header/Links/Links';
+
+const linkItems = [
+  {
+    to: '/products/electronics',
+    children: 'electronics',
+  },
+  {
+    to: '/products/jewelery',
+    children: 'jewelery',
+  },
+  {
+    to: '/products/mens-clothing',
+    children: 'men&apos;s clothing',
+  },
+  {
+    to: '/products/womens-clothing',
+    children: 'women&apos;s clothing',
+  },
+];
 
 const Home = () => {
   return (
     <>
       <h2>Explore Popular Categories</h2>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/products/electronics">electronics</Link>
-          </li>
-          <li>
-            <Link to="/products/jewelery">jewelery</Link>
-          </li>
-          <li>
-            <Link to="/products/mens-clothing">men&apos;s clothing</Link>
-          </li>
-          <li>
-            <Link to="/products/womens-clothing">women&apos;s clothing</Link>
-          </li>
-        </ul>
-      </nav>
+      <Links linkItems={linkItems} />
     </>
   );
 };
