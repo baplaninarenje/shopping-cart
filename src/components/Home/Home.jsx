@@ -42,10 +42,10 @@ const linkItems = [
 
 const Home = () => {
   return (
-    <>
+    <div className="home">
       <h2>Explore Popular Categories</h2>
       <Links linkItems={linkItems} />
-    </>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ function Header({ cartItemsCount }) {
       children: 'Home',
     },
     {
-      to: '/products',
+      to: '/products/all',
       children: 'Products',
     },
     {
@@ -24,7 +24,9 @@ function Header({ cartItemsCount }) {
   return (
     <header>
       <h1>Very Awsome Shop</h1>
-      <Links linkItems={linkItems} />
+      <nav>
+        <Links linkItems={linkItems} />
+      </nav>
     </header>
   );
 }

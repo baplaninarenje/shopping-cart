@@ -3,17 +3,15 @@ import LinkItem from './LinkItem';
 
 function Links({ linkItems }) {
   return (
-    <nav>
-      <ul>
-        {linkItems.map(({ to, children }) => {
-          return (
-            <LinkItem key={to} to={to}>
-              {children}
-            </LinkItem>
-          );
-        })}
-      </ul>
-    </nav>
+    <ul>
+      {linkItems.map(({ to, children }) => {
+        return (
+          <LinkItem key={to} to={to}>
+            {children}
+          </LinkItem>
+        );
+      })}
+    </ul>
   );
 }
 
