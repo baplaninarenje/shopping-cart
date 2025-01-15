@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
+  const error = useRouteError();
+
   return (
     <div>
-      <h1>Oh no, this route doesn&apos;t exist!</h1>
+      <h2>
+        {error?.message ||
+          error?.data ||
+          'Something went wrong. Please try again later.'}
+      </h2>
       <Link to="/">
         You can go back to the home page by clicking here, though!
       </Link>

@@ -1,50 +1,56 @@
+import { useEffect, useState } from 'react';
 import Links from '../Header/Links/Links';
 import CategoryItem from './CategoryItem/CategoryItem';
-
-const linkItems = [
-  {
-    to: '/products/electronics',
-    children: (
-      <CategoryItem
-        categoryImgSrc="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
-        categoryName="electronics"
-      />
-    ),
-  },
-  {
-    to: '/products/jewelery',
-    children: (
-      <CategoryItem
-        categoryImgSrc="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
-        categoryName="jewelery"
-      />
-    ),
-  },
-  {
-    to: '/products/mens-clothing',
-    children: (
-      <CategoryItem
-        categoryImgSrc="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        categoryName="men's clothing"
-      />
-    ),
-  },
-  {
-    to: '/products/womens-clothing',
-    children: (
-      <CategoryItem
-        categoryImgSrc="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
-        categoryName="women's clothing"
-      />
-    ),
-  },
-];
+import { getRequestWithNativeFetch } from '../getRequestWithNativeFetch';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const Home = () => {
+  const [categories, setCategories] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  useEffect(() => {
+    const fetchDataForCategories = async () => {
+      try {
+        const categoriesData = await getRequestWithNativeFetch(
+          'https://fakestoreapi.com/products/categories'
+        );
+        setCategories(categoriesData);
+        setErrorMessage(null);
+      } catch (err) {
+        setErrorMessage(err.message);
+        setCategories(null);
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDataForCategories();
+  }, []);
+
+  const linkItems = categories?.map((category) => {
+    return {
+      to: '/products/category/' + category,
+      children: (
+        <CategoryItem
+          categoryImgSrc="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
+          categoryName={category}
+        />
+      ),
+    };
+  });
+
   return (
     <div className="home">
-      <h2>Explore Popular Categories</h2>
-      <Links linkItems={linkItems} />
+      {loading && <div>Loading categories...</div>}
+      {errorMessage && <ErrorPage />}
+      {categories && (
+        <>
+          <h2>Explore Popular Categories</h2>
+          <Links linkItems={linkItems} />
+        </>
+      )}
     </div>
   );
 };
