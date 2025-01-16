@@ -26,18 +26,35 @@ const routes = [
         <Products />
       </Layout>
     ),
+    errorElement: (
+      <Layout>
+        <ErrorPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/products',
+    element: (
+      <Layout>
+        <Products />
+      </Layout>
+    ),
+    errorElement: (
+      <Layout>
+        <ErrorPage />
+      </Layout>
+    ),
   },
   {
     path: '/products/:id',
     element: (
       <Layout>
-        <ProductDetail
-          productImgSrc="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-          title="Rain Jacket Women Windbreaker Striped Climbing Raincoats"
-          price={24.99}
-          description="Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look."
-          quantity={4}
-        />
+        <ProductDetail />
+      </Layout>
+    ),
+    errorElement: (
+      <Layout>
+        <ErrorPage />
       </Layout>
     ),
   },
@@ -46,6 +63,11 @@ const routes = [
     element: (
       <Layout>
         <Cart />
+      </Layout>
+    ),
+    errorElement: (
+      <Layout>
+        <ErrorPage />
       </Layout>
     ),
   },

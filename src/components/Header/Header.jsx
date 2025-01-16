@@ -8,7 +8,7 @@ function Header({ cartItemsCount }) {
       children: 'Home',
     },
     {
-      to: '/products/category/all',
+      to: '/products',
       children: 'Products',
     },
     {

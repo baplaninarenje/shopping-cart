@@ -1,49 +1,36 @@
+import { useParams } from 'react-router-dom';
+import { ProductsContext } from '../../contexts/ProductsContext';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import Links from '../Header/Links/Links';
 import ProductCard from './ProductCard/ProductCard';
-import { useParams } from 'react-router-dom';
-import ProductDetail from './ProductDetail/ProductDetail';
-
-const linkItems = [
-  {
-    to: '/products/1',
-    children: (
-      <ProductCard
-        productImgSrc="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        title="men's clothing"
-        price={24.99}
-      />
-    ),
-  },
-  {
-    to: '/products/2',
-    children: (
-      <ProductCard
-        productImgSrc="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        title="men's clothing"
-        price={24.99}
-      />
-    ),
-  },
-  {
-    to: '/products/3',
-    children: (
-      <ProductCard
-        productImgSrc="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        title="men's clothing"
-        price={24.99}
-      />
-    ),
-  },
-];
+import { useContext } from 'react';
 
 const Products = () => {
   const { categoryName } = useParams();
-  console.log(categoryName);
+  const { products, loading, errorMessage } = useContext(ProductsContext);
+  const linkItems = products?.map((product) => {
+    return {
+      to: '/products/' + product?.id,
+      children: (
+        <ProductCard
+          productImgSrc={product?.image}
+          title={product?.title}
+          price={product?.price}
+        />
+      ),
+    };
+  });
 
   return (
     <div className="products">
-      <h3>categoryName</h3>
-      <Links linkItems={linkItems} />
+      {loading && <div>Loading products...</div>}
+      {errorMessage && <ErrorPage />}
+      {products && (
+        <>
+          <h3>{categoryName || 'All Products'}</h3>
+          <Links linkItems={linkItems} />
+        </>
+      )}
     </div>
   );
 };
