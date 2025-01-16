@@ -1,11 +1,14 @@
 import { useContext, useState } from 'react';
 import { ProductsContext } from '../../../contexts/ProductsContext';
 import { CartContext } from '../../../contexts/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
   const [productQuantity, setProductQuantity] = useState(1);
   const { products } = useContext(ProductsContext);
   const { cartItems, setCartItems } = useContext(CartContext);
+  const navigate = useNavigate();
+
   const product = products?.[0];
 
   const cartContainsProductId = cartItems.some(
@@ -14,6 +17,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = (e) => {
     e.preventDefault();
+    navigate('/cart');
     if (cartContainsProductId) return;
     setCartItems((cartItems) => [
       ...cartItems,
