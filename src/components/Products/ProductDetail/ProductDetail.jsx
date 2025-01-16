@@ -2,10 +2,11 @@ import { useContext } from 'react';
 import { ProductsContext } from '../../../contexts/ProductsContext';
 
 const ProductDetail = () => {
-  const { products: product } = useContext(ProductsContext);
+  const { products } = useContext(ProductsContext);
+  const product = products?.[0];
 
   return (
-    <section>
+    <section className="product-detail">
       <img width={100} src={product?.image} alt={product?.title} />
       <p>{product?.title}</p>
       <p>${product?.price}</p>

@@ -20,7 +20,7 @@ const routes = [
     ),
   },
   {
-    path: '/products/category/:categoryName',
+    path: '/products',
     element: (
       <Layout>
         <Products />
@@ -33,7 +33,7 @@ const routes = [
     ),
   },
   {
-    path: '/products',
+    path: '/products/category/:categoryName',
     element: (
       <Layout>
         <Products />

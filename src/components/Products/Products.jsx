@@ -8,6 +8,7 @@ import { useContext } from 'react';
 const Products = () => {
   const { categoryName } = useParams();
   const { products, loading, errorMessage } = useContext(ProductsContext);
+
   const linkItems = products?.map((product) => {
     return {
       to: '/products/' + product?.id,

@@ -8,9 +8,9 @@ function Layout({ children }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+
   return (
     <>
-      <Header cartItemsCount={1} />
       <ProductsContext.Provider
         value={{
           products,
@@ -21,6 +21,7 @@ function Layout({ children }) {
           setErrorMessage,
         }}
       >
+        <Header cartItemsCount={1} />
         <main>{children}</main>
       </ProductsContext.Provider>
 

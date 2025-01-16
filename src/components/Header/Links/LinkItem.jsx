@@ -15,8 +15,7 @@ const LinkItem = ({ to, children }) => {
       const productsData = await getRequestWithNativeFetch(
         baseUrl + dynamicPathParam
       );
-      console.log(productsData);
-      setProducts(productsData);
+      setProducts(Array.isArray(productsData) ? productsData : [productsData]);
       setErrorMessage('');
     } catch (err) {
       setErrorMessage(err.message);
@@ -28,11 +27,7 @@ const LinkItem = ({ to, children }) => {
   };
 
   function handleClick() {
-    if (!to.includes('products')) {
-      console.log(`!to.includes('products'`);
-
-      return;
-    }
+    if (!to.includes('products')) return;
     fetchDataForProducts(to);
   }
 

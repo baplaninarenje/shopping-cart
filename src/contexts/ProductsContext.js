@@ -1,10 +1,10 @@
 import { createContext } from 'react';
 
 export const ProductsContext = createContext({
-  products: null,
-  setProducts: () => {},
+  products: [],
+  setProducts: () => [],
   loading: true,
-  setLoading: () => {},
-  errorMessage: null,
-  setErrorMessage: () => {},
+  setLoading: () => true,
+  errorMessage: '',
+  setErrorMessage: () => '',
 });
