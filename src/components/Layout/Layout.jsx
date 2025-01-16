@@ -5,6 +5,7 @@ import { ProductsContext } from '../../contexts/ProductsContext.js';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getRequestWithNativeFetch } from '../getRequestWithNativeFetch.js';
+import { CartContext } from '../../contexts/CartContext.js';
 
 const baseUrl = 'https://fakestoreapi.com';
 
@@ -12,8 +13,14 @@ function Layout({ children }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+  const [cartItems, setCartItems] = useState([]);
 
   const { pathname } = useLocation();
+
+  const cartItemsCount = cartItems.reduce(
+    (total, product) => total + product.productQuantity,
+    0
+  );
 
   useEffect(() => {
     if (!pathname.includes('products')) return;
@@ -49,8 +56,10 @@ function Layout({ children }) {
           setErrorMessage,
         }}
       >
-        <Header cartItemsCount={1} />
-        <main>{children}</main>
+        <CartContext.Provider value={{ cartItems, setCartItems }}>
+          <Header cartItemsCount={cartItemsCount} />
+          <main>{children}</main>
+        </CartContext.Provider>
       </ProductsContext.Provider>
 
       <Footer />
