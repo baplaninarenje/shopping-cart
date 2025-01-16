@@ -5,14 +5,20 @@ import { CartContext } from '../../../contexts/CartContext';
 const ProductDetail = () => {
   const [productQuantity, setProductQuantity] = useState(1);
   const { products } = useContext(ProductsContext);
-  const { setCartItems } = useContext(CartContext);
+  const { cartItems, setCartItems } = useContext(CartContext);
   const product = products?.[0];
+
+  const cartContainsProductId = cartItems.some(
+    (cartItem) => cartItem.productId === product.id
+  );
 
   const handleAddToCart = (e) => {
     e.preventDefault();
+    if (cartContainsProductId) return;
     setCartItems((cartItems) => [
       ...cartItems,
       {
+        productId: product?.id,
         productTitle: product?.title,
         productPrice: product?.price,
         productImage: product?.image,
@@ -55,7 +61,7 @@ const ProductDetail = () => {
             +
           </button>
         </label>
-        <button>Add To Cart</button>
+        <button>{cartContainsProductId ? 'See in cart' : 'Add To Cart'}</button>
       </form>
     </section>
   );
