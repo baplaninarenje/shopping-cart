@@ -3,11 +3,12 @@ import Links from '../Header/Links/Links';
 import CategoryItem from './CategoryItem/CategoryItem';
 import { getRequestWithNativeFetch } from '../getRequestWithNativeFetch';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import NothingFound from '../Products/NothingFound/NothingFound';
 
 const Home = () => {
-  const [categories, setCategories] = useState(null);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const fetchDataForCategories = async () => {
@@ -41,11 +42,14 @@ const Home = () => {
     };
   });
 
+  console.log(categories.length);
+
   return (
     <div className="home">
       {loading && <div>Loading categories...</div>}
       {errorMessage && <ErrorPage />}
-      {categories && (
+      {categories.length === 0 && !errorMessage && <NothingFound />}
+      {categories.length > 0 && (
         <>
           <h2>Explore Popular Categories</h2>
           <Links linkItems={linkItems} />

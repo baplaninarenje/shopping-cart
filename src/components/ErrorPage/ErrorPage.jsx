@@ -4,7 +4,7 @@ const ErrorPage = () => {
   const error = useRouteError();
 
   return (
-    <div>
+    <section className="error-page">
       <h2>
         {error?.message ||
           error?.data ||
@@ -13,7 +13,7 @@ const ErrorPage = () => {
       <Link to="/">
         You can go back to the home page by clicking here, though!
       </Link>
-    </div>
+    </section>
   );
 };
 

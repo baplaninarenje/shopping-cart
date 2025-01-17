@@ -38,18 +38,3 @@ CartItem.propTypes = {
 };
 
 export default CartItem;
-// productId
-// :
-// 9
-// productImage
-// :
-// "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
-// productPrice
-// :
-// 64
-// productQuantity
-// :
-// 3
-// productTitle
-// :
-// "WD 2TB Elements Portable External Hard Drive - USB 3.0 "
