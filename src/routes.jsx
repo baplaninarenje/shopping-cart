@@ -27,22 +27,12 @@ const routes = [
         <Products />
       </Layout>
     ),
-    errorElement: (
-      <Layout>
-        <ErrorPage />
-      </Layout>
-    ),
   },
   {
     path: '/products/category/:categoryName',
     element: (
       <Layout>
         <Products />
-      </Layout>
-    ),
-    errorElement: (
-      <Layout>
-        <ErrorPage />
       </Layout>
     ),
   },
@@ -53,11 +43,6 @@ const routes = [
         <ProductDetail />
       </Layout>
     ),
-    errorElement: (
-      <Layout>
-        <ErrorPage />
-      </Layout>
-    ),
   },
   {
     path: '/cart',
@@ -66,22 +51,12 @@ const routes = [
         <Cart />
       </Layout>
     ),
-    errorElement: (
-      <Layout>
-        <ErrorPage />
-      </Layout>
-    ),
   },
   {
     path: '/checkout',
     element: (
       <Layout>
         <Checkout />
-      </Layout>
-    ),
-    errorElement: (
-      <Layout>
-        <ErrorPage />
       </Layout>
     ),
   },
