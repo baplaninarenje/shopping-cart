@@ -56,8 +56,10 @@ function Layout({ children }) {
           setErrorMessage,
         }}
       >
-        <CartContext.Provider value={{ cartItems, setCartItems }}>
-          <Header cartItemsCount={cartItemsCount} />
+        <CartContext.Provider
+          value={{ cartItems, setCartItems, cartItemsCount }}
+        >
+          <Header />
           <main>{children}</main>
         </CartContext.Provider>
       </ProductsContext.Provider>

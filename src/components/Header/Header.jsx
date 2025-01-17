@@ -1,7 +1,10 @@
-import PropTypes from 'prop-types';
 import Links from './Links/Links';
+import { CartContext } from '../../contexts/CartContext';
+import { useContext } from 'react';
 
-function Header({ cartItemsCount }) {
+function Header() {
+  const { cartItemsCount } = useContext(CartContext);
+
   const linkItems = [
     {
       to: '/',
@@ -30,9 +33,5 @@ function Header({ cartItemsCount }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  cartItemsCount: PropTypes.number.isRequired,
-};
 
 export default Header;
