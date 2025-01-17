@@ -6,10 +6,13 @@ const GoToCheckout = () => {
   const { cartItemsCount, cartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const totalPrice = cartItems.reduce(
-    (total, product) => total + product.productPrice * product.productQuantity,
-    0
-  );
+  const totalPrice = cartItems
+    .reduce(
+      (total, product) =>
+        total + product.productPrice * product.productQuantity,
+      0
+    )
+    .toFixed(2);
 
   return (
     <section className="go-to-checkout">
