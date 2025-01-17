@@ -1,4 +1,5 @@
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Cart/Checkout/Checkout';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
@@ -63,6 +64,19 @@ const routes = [
     element: (
       <Layout>
         <Cart />
+      </Layout>
+    ),
+    errorElement: (
+      <Layout>
+        <ErrorPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/checkout',
+    element: (
+      <Layout>
+        <Checkout />
       </Layout>
     ),
     errorElement: (
