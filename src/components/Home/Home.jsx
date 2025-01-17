@@ -42,8 +42,6 @@ const Home = () => {
     };
   });
 
-  console.log(categories.length);
-
   return (
     <div className="home">
       {loading && <div>Loading categories...</div>}
