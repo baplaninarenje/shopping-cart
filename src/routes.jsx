@@ -9,56 +9,20 @@ import Products from './components/Products/Products';
 const routes = [
   {
     path: '/',
-    element: (
-      <Layout>
-        <Home />
-      </Layout>
-    ),
+    element: <Layout />,
     errorElement: (
       <Layout>
         <ErrorPage />
       </Layout>
     ),
-  },
-  {
-    path: '/products',
-    element: (
-      <Layout>
-        <Products />
-      </Layout>
-    ),
-  },
-  {
-    path: '/products/category/:categoryName',
-    element: (
-      <Layout>
-        <Products />
-      </Layout>
-    ),
-  },
-  {
-    path: '/products/:id',
-    element: (
-      <Layout>
-        <ProductDetail />
-      </Layout>
-    ),
-  },
-  {
-    path: '/cart',
-    element: (
-      <Layout>
-        <Cart />
-      </Layout>
-    ),
-  },
-  {
-    path: '/checkout',
-    element: (
-      <Layout>
-        <Checkout />
-      </Layout>
-    ),
+    children: [
+      { path: '', element: <Home /> },
+      { path: 'products', element: <Products /> },
+      { path: 'products/category/:categoryName', element: <Products /> },
+      { path: 'products/:id', element: <ProductDetail /> },
+      { path: 'cart', element: <Cart /> },
+      { path: 'checkout', element: <Checkout /> },
+    ],
   },
 ];
 

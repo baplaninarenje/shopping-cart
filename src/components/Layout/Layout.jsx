@@ -3,7 +3,7 @@ import Header from './../Header/Header.jsx';
 import Footer from './../Footer/Footer.jsx';
 import { ProductsContext } from '../../contexts/ProductsContext.js';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { getRequestWithNativeFetch } from '../getRequestWithNativeFetch.js';
 import { CartContext } from '../../contexts/CartContext.js';
 
@@ -60,7 +60,7 @@ function Layout({ children }) {
           value={{ cartItems, setCartItems, cartItemsCount }}
         >
           <Header />
-          <main>{children}</main>
+          <main>{children ?? <Outlet />}</main>
         </CartContext.Provider>
       </ProductsContext.Provider>
 
@@ -70,7 +70,7 @@ function Layout({ children }) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };
 
 export default Layout;
