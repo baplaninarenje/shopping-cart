@@ -4,7 +4,7 @@ import Footer from './../Footer/Footer.jsx';
 import { ProductsContext } from '../../contexts/ProductsContext.js';
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { getRequestWithNativeFetch } from '../getRequestWithNativeFetch.js';
+import { getRequestWithNativeFetch } from '../utils/getRequestWithNativeFetch.js';
 import { CartContext } from '../../contexts/CartContext.js';
 
 const baseUrl = 'https://fakestoreapi.com';

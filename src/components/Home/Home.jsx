@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Links from '../Header/Links/Links';
 import CategoryItem from './CategoryItem/CategoryItem';
-import { getRequestWithNativeFetch } from '../getRequestWithNativeFetch';
+import { getRequestWithNativeFetch } from '../utils/getRequestWithNativeFetch';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import NothingFound from '../Products/NothingFound/NothingFound';
 
