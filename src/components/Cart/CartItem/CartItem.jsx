@@ -20,7 +20,13 @@ const CartItem = ({
 
   return (
     <>
-      <img width={100} src={productImage} alt={productTitle} />
+      <img
+        loading="lazy"
+        width={500}
+        height={500}
+        src={productImage}
+        alt={productTitle}
+      />
       <p>{productTitle}</p>
       <p>${productPrice}</p>
       <p>Qty: {productQuantity}</p>

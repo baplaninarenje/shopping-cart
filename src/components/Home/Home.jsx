@@ -33,12 +33,7 @@ const Home = () => {
   const linkItems = categories?.map((category) => {
     return {
       to: '/products/category/' + category,
-      children: (
-        <CategoryItem
-          categoryImgSrc="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
-          categoryName={category}
-        />
-      ),
+      children: <CategoryItem categoryName={category} />,
     };
   });
 

@@ -48,7 +48,12 @@ const ProductDetail = () => {
       {products.length === 0 && !errorMessage && <NothingFound />}
       {products.length > 0 && (
         <>
-          <img width={100} src={product?.image} alt={product?.title} />
+          <img
+            width={500}
+            height={500}
+            src={product?.image}
+            alt={product?.title}
+          />
           <p>{product?.title}</p>
           <p>${product?.price}</p>
           <p>{product?.description}</p>
