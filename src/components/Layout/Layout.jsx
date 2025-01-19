@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { getRequestWithNativeFetch } from '../utils/getRequestWithNativeFetch.js';
 import { CartContext } from '../../contexts/CartContext.js';
+import styles from './Layout.module.css';
 
 const baseUrl = 'https://fakestoreapi.com';
 
@@ -45,7 +46,7 @@ function Layout({ children }) {
   }, [pathname]);
 
   return (
-    <>
+    <div className={styles.layout}>
       <ProductsContext.Provider
         value={{
           products,
@@ -65,7 +66,7 @@ function Layout({ children }) {
       </ProductsContext.Provider>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

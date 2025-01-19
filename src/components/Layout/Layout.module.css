@@ -1,0 +1,7 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  gap: 3vw;
+  align-items: center;
+}
