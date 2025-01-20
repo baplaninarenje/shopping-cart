@@ -21,13 +21,13 @@ header {
   font-weight: 700;
 }
 
-ul {
+nav ul {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-a {
+nav a {
   font-size: 2em;
 }
 

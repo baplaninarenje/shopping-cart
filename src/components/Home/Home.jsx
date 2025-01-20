@@ -4,6 +4,7 @@ import CategoryItem from './CategoryItem/CategoryItem';
 import { getRequestWithNativeFetch } from '../utils/getRequestWithNativeFetch';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import NothingFound from '../Products/NothingFound/NothingFound';
+import styles from './Home.module.css';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -38,13 +39,13 @@ const Home = () => {
   });
 
   return (
-    <div className="home">
+    <div className={styles.home}>
       {loading && <div>Loading categories...</div>}
       {errorMessage && <ErrorPage />}
       {categories.length === 0 && !errorMessage && <NothingFound />}
       {categories.length > 0 && (
         <>
-          <h2>Explore Popular Categories</h2>
+          <h2>Tranding</h2>
           <Links linkItems={linkItems} />
         </>
       )}
