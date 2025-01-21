@@ -26,6 +26,11 @@ a {
   color: #111820;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .layout {
   display: flex;
   flex-direction: column;

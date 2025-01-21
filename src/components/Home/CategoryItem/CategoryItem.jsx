@@ -21,7 +21,6 @@ const CategoryItem = ({ categoryName }) => {
   return (
     <section className={styles.category}>
       <img
-        className={styles.categoryImg}
         loading="lazy"
         width={500}
         height={500}
