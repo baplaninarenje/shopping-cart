@@ -5,6 +5,7 @@ import Links from '../Header/Links/Links';
 import ProductCard from './ProductCard/ProductCard';
 import { useContext } from 'react';
 import NothingFound from './NothingFound/NothingFound';
+import styles from './Products.module.css';
 
 const Products = () => {
   const { categoryName } = useParams();
@@ -24,7 +25,7 @@ const Products = () => {
   });
 
   return (
-    <section className="products">
+    <section className={styles.products}>
       {loading && <div>Loading products...</div>}
       {errorMessage && <ErrorPage />}
       {products.length === 0 && !errorMessage && <NothingFound />}
