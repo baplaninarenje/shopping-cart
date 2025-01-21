@@ -32,6 +32,7 @@ const Products = () => {
       {products.length > 0 && (
         <>
           <h3>{categoryName || 'All Products'}</h3>
+          <h4>{products.length} Results</h4>
           <Links linkItems={linkItems} />
         </>
       )}

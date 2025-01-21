@@ -6,14 +6,14 @@ const getCategoryImgSrc = (categoryName) => {
     case 'electronics':
       return 'https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg';
     case 'jewelery':
-      return 'https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg';
+      return 'https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg';
     case "men's clothing":
-      return 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg';
+      return 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg';
     case "women's clothing":
-      return 'https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg';
+      return 'https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg';
 
     default:
-      return 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg';
+      return 'https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg';
   }
 };
 const CategoryItem = ({ categoryName }) => {

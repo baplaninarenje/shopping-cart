@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import styles from './ProductCard.module.css';
 
 const ProductCard = ({ productImgSrc, title, price }) => {
   return (
-    <>
+    <section className={styles.productCard}>
       <img
         loading="lazy"
         width={500}
@@ -10,9 +11,11 @@ const ProductCard = ({ productImgSrc, title, price }) => {
         src={productImgSrc}
         alt={title}
       />
-      <p>{title}</p>
-      <p>${price}</p>
-    </>
+      <div className={styles.productCardText}>
+        <p>{title}</p>
+        <p>${price}</p>
+      </div>
+    </section>
   );
 };
 
