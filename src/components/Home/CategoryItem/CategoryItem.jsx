@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import styles from './CategoryItem.module.css';
 
 const getCategoryImgSrc = (categoryName) => {
   switch (categoryName) {
@@ -18,8 +19,9 @@ const getCategoryImgSrc = (categoryName) => {
 const CategoryItem = ({ categoryName }) => {
   const categoryImgSrc = getCategoryImgSrc(categoryName);
   return (
-    <>
+    <section className={styles.category}>
       <img
+        className={styles.categoryImg}
         loading="lazy"
         width={500}
         height={500}
@@ -27,7 +29,7 @@ const CategoryItem = ({ categoryName }) => {
         alt={categoryName}
       />
       <h3>{categoryName}</h3>
-    </>
+    </section>
   );
 };
 
