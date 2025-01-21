@@ -26,7 +26,7 @@ function Header() {
       children: (
         <>
           <span>Cart</span>
-          <div className="cart-icon">{cartItemsCount}</div>
+          <span className={styles.cartIcon}>{cartItemsCount}</span>
         </>
       ),
     },

@@ -1,7 +1,6 @@
 header {
   font-size: 0.9rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -33,7 +32,8 @@ nav a {
 
 a[href='/cart'] {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
   padding-bottom: 30px;
   border-bottom: rgba(17, 24, 32, 0.2) solid 2px;
 }
@@ -45,6 +45,17 @@ a[href='/cart'] {
   width: fit-content;
   align-self: flex-end;
   font-size: 2em;
+}
+
+.cartIcon {
+  background-color: #d50b0b;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: 1.5em;
 }
 
 .menuDesktop {

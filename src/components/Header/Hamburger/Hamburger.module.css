@@ -5,6 +5,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  align-self: center;
 }
 
 .hamburger .line {
