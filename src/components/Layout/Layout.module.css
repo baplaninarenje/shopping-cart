@@ -1,7 +1,9 @@
-html {
+html,
+body {
   color: #111820;
   font-family: 'Market Sans', 'Helvetica Neue', Helvetica, Arial, Roboto,
     sans-serif;
+  height: 100%;
 }
 
 footer {
@@ -45,4 +47,9 @@ img {
   flex-direction: column;
   padding: 20px;
   gap: 3vw;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
