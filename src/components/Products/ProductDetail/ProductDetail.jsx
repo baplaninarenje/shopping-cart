@@ -4,6 +4,7 @@ import { CartContext } from '../../../contexts/CartContext';
 import { useNavigate } from 'react-router-dom';
 import ErrorPage from '../../ErrorPage/ErrorPage';
 import NothingFound from '../NothingFound/NothingFound';
+import styles from './ProductDetail.module.css';
 
 const ProductDetail = () => {
   const [productQuantity, setProductQuantity] = useState(1);
@@ -42,7 +43,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <section className="product-detail">
+    <section className={styles.productDetail}>
       {loading && <div>Loading product...</div>}
       {errorMessage && <ErrorPage />}
       {products.length === 0 && !errorMessage && <NothingFound />}
@@ -54,13 +55,14 @@ const ProductDetail = () => {
             src={product?.image}
             alt={product?.title}
           />
-          <p>{product?.title}</p>
-          <p>${product?.price}</p>
+          <h3>{product?.title}</h3>
+          <p className={styles.price}>${product?.price}</p>
           <p>{product?.description}</p>
           <form onSubmit={handleAddToCart}>
-            <label>
-              Qty:
+            <section className={styles.quantity}>
+              <label htmlFor="quantityInput">Quantity:</label>
               <button
+                className={styles.minus}
                 type="button"
                 disabled={productQuantity === 1 ? true : false}
                 onClick={handleDecrementProductQuantity}
@@ -69,15 +71,20 @@ const ProductDetail = () => {
               </button>
               <input
                 type="number"
+                id="quantityInput"
                 min="1"
                 value={productQuantity}
                 onChange={(e) => setProductQuantity(parseInt(e.target.value))}
               />
-              <button type="button" onClick={handleIncrementProductQuantity}>
+              <button
+                type="button"
+                onClick={handleIncrementProductQuantity}
+                className={styles.plus}
+              >
                 +
               </button>
-            </label>
-            <button>
+            </section>
+            <button className={styles.addToCart}>
               {cartContainsProductId ? 'See in cart' : 'Add To Cart'}
             </button>
           </form>
