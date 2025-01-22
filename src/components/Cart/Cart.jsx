@@ -35,7 +35,14 @@ const Cart = () => {
     <div className={styles.cart}>
       <h3>Shopping cart</h3>
       <Links linkItems={linkItems} />
-      {linkItems.length ? <GoToCheckout /> : <p>No items.</p>}
+      {linkItems.length ? (
+        <GoToCheckout />
+      ) : (
+        <>
+          <br></br>
+          <p>No items.</p>
+        </>
+      )}
     </div>
   );
 };
