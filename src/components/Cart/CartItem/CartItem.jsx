@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { CartContext } from '../../../contexts/CartContext';
 import PropTypes from 'prop-types';
+import styles from './CartItem.module.css';
 
 const CartItem = ({
   productId,
@@ -19,7 +20,7 @@ const CartItem = ({
   };
 
   return (
-    <>
+    <section className={styles.cartItem}>
       <img
         loading="lazy"
         width={500}
@@ -27,11 +28,15 @@ const CartItem = ({
         src={productImage}
         alt={productTitle}
       />
-      <p>{productTitle}</p>
-      <p>${productPrice}</p>
-      <p>Qty: {productQuantity}</p>
-      <button onClick={handleRemoveFromCart}>Remove</button>
-    </>
+      <div className={styles.cartItemText}>
+        <h4>{productTitle}</h4>
+        <p>${productPrice}</p>
+        <p>Qty: {productQuantity}</p>
+        <button onClick={handleRemoveFromCart} className={styles.fakeLink}>
+          Remove
+        </button>
+      </div>
+    </section>
   );
 };
 
