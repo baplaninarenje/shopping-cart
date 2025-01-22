@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../../contexts/CartContext';
+import styles from './GoToCheckout.module.css';
+import stylesProductDetail from './../../Products/ProductDetail/ProductDetail.module.css';
 
 const GoToCheckout = () => {
   const { cartItemsCount, cartItems } = useContext(CartContext);
@@ -15,16 +17,21 @@ const GoToCheckout = () => {
     .toFixed(2);
 
   return (
-    <section className="go-to-checkout">
-      <p className="total-items">
+    <section className={styles.goToCheckout}>
+      <p>
         <span>Total Items</span>
-        <span>{cartItemsCount}</span>
+        <strong>{cartItemsCount}</strong>
       </p>
-      <p className="total-price">
+      <p>
         <span>Total Price</span>
-        <span>US ${totalPrice}</span>
+        <strong>US ${totalPrice}</strong>
       </p>
-      <button onClick={() => navigate('/checkout')}>Go to checkout</button>
+      <button
+        className={stylesProductDetail.addToCart}
+        onClick={() => navigate('/checkout')}
+      >
+        Go to checkout
+      </button>
     </section>
   );
 };
