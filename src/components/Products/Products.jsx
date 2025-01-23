@@ -6,6 +6,7 @@ import ProductCard from './ProductCard/ProductCard';
 import { useContext } from 'react';
 import NothingFound from './NothingFound/NothingFound';
 import styles from './Products.module.css';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Products = () => {
   const { categoryName } = useParams();
@@ -26,7 +27,7 @@ const Products = () => {
 
   return (
     <section className={styles.products}>
-      {loading && <div>Loading products...</div>}
+      {loading && <LoadingSpinner />}
       {errorMessage && <ErrorPage />}
       {products.length === 0 && !errorMessage && <NothingFound />}
       {products.length > 0 && (

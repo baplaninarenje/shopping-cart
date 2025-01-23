@@ -5,6 +5,7 @@ import { getRequestWithNativeFetch } from '../utils/getRequestWithNativeFetch';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import NothingFound from '../Products/NothingFound/NothingFound';
 import styles from './Home.module.css';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -40,7 +41,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      {loading && <div>Loading categories...</div>}
+      {loading && <LoadingSpinner />}
       {errorMessage && <ErrorPage />}
       {categories.length === 0 && !errorMessage && <NothingFound />}
       {categories.length > 0 && (

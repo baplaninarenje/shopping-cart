@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ErrorPage from '../../ErrorPage/ErrorPage';
 import NothingFound from '../NothingFound/NothingFound';
 import styles from './ProductDetail.module.css';
+import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 
 const ProductDetail = () => {
   const [productQuantity, setProductQuantity] = useState(1);
@@ -44,7 +45,7 @@ const ProductDetail = () => {
 
   return (
     <section className={styles.productDetail}>
-      {loading && <div>Loading product...</div>}
+      {loading && <LoadingSpinner />}
       {errorMessage && <ErrorPage />}
       {products.length === 0 && !errorMessage && <NothingFound />}
       {products.length > 0 && (
