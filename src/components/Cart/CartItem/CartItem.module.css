@@ -27,5 +27,6 @@
   font-size: inherit;
   padding: 0;
   text-decoration: underline;
+  margin-top: auto;
   align-self: flex-end;
 }
