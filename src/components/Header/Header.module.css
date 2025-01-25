@@ -67,8 +67,18 @@ a[href='/cart'] {
     display: none;
   }
 
-  .menuDesktop,
-  .menuDesktop ul {
+  .menuDesktop {
     display: flex;
+    padding-right: 30px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  a[href='/cart'] {
+    border: none;
+    padding: 0;
   }
 }
