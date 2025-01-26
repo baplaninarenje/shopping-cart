@@ -13,7 +13,7 @@ const ProductCard = ({ productImgSrc, title, price }) => {
       />
       <div className={styles.productCardText}>
         <p>{title}</p>
-        <p>${price}</p>
+        <p>US ${price}</p>
       </div>
     </section>
   );

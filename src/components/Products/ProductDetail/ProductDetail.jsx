@@ -58,7 +58,7 @@ const ProductDetail = () => {
           />
           <section className={styles.productInfo}>
             <h3>{product?.title}</h3>
-            <p className={styles.price}>${product?.price}</p>
+            <p className={styles.price}>US ${product?.price}</p>
             <p>{product?.description}</p>
             <form onSubmit={handleAddToCart}>
               <section className={styles.quantity}>

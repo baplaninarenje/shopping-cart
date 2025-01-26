@@ -30,7 +30,7 @@ const CartItem = ({
       />
       <div className={styles.cartItemText}>
         <h4>{productTitle}</h4>
-        <p>${productPrice}</p>
+        <p>US ${productPrice}</p>
         <p>Qty: {productQuantity}</p>
         <button onClick={handleRemoveFromCart} className={styles.fakeLink}>
           Remove
