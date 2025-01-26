@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import Hamburger from './Hamburger/Hamburger';
 import mainLogo from './../../assets/anti-sns.jpeg';
 import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const { cartItemsCount } = useContext(CartContext);
@@ -34,18 +35,19 @@ function Header() {
   ];
   return (
     <header>
-      <h1>
-        <span>Anti -</span>
-        <img
-          className={styles.mainLogo}
-          width={76}
-          height={50}
-          src={mainLogo}
-          alt="Anti-SNS Shop Logo"
-        />
-        <span className={styles.antiSnsShopText}>Shop</span>
-      </h1>
-
+      <Link to="/">
+        <h1>
+          <span>Anti -</span>
+          <img
+            className={styles.mainLogo}
+            width={76}
+            height={50}
+            src={mainLogo}
+            alt="Anti-SNS Shop Logo"
+          />
+          <span className={styles.antiSnsShopText}>Shop</span>
+        </h1>
+      </Link>
       <Hamburger toggleMenu={toggleMenu} />
       {isMenuOpen && (
         <nav className={styles.menuMobile}>
