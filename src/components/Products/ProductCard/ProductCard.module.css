@@ -15,3 +15,13 @@
   gap: 15px;
   font-weight: bold;
 }
+
+@media (min-width: 767px) {
+  .productCard {
+    border: none;
+  }
+
+  .productCardText {
+    justify-content: flex-end;
+  }
+}
