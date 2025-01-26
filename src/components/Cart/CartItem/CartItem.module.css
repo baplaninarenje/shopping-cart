@@ -30,3 +30,12 @@
   margin-top: auto;
   text-align: left;
 }
+
+@media (min-width: 767px) {
+  .cartItem {
+    border: rgba(17, 24, 32, 0.2) solid 1px;
+    border-radius: 1.5rem;
+    padding: 30px;
+    margin: 20px 0;
+  }
+}

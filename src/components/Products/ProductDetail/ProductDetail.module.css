@@ -49,10 +49,28 @@ input[type='number'] {
   background-color: white;
 }
 
+.addToCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-height: 48px;
+  border-radius: 48px;
+  font-size: 1rem;
+  color: white;
+  background-color: #3665f3;
+  border: none;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+
 .minus:hover,
 .plus:hover,
 .addToCart:hover {
-  background-color: #b8dcff;
+  background-blend-mode: multiply;
+  filter: brightness(96%);
   cursor: pointer;
 }
 
@@ -71,7 +89,7 @@ input[type='number'] {
 .minus:active,
 .plus:active,
 .addToCart:active {
-  background-color: #7ab8ff;
+  filter: brightness(92%);
 }
 
 input::-webkit-outer-spin-button,
@@ -87,23 +105,6 @@ input[type='number'] {
   width: 10%;
   border: none;
   text-align: center;
-}
-
-.addToCart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  min-height: 48px;
-  border-radius: 48px;
-  font-size: 1rem;
-  color: #3665f3;
-  background-color: transparent;
-  border: #3665f3 1px solid;
-  margin: 0;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: bottom;
 }
 
 @media (min-width: 767px) {

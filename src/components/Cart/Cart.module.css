@@ -7,3 +7,34 @@
   padding: 30px 0;
   border-bottom: rgba(17, 24, 32, 0.2) solid 1px;
 }
+
+@media (min-width: 767px) {
+  .cart > h3 {
+    border: none;
+  }
+
+  .cart > ul {
+    order: 1;
+    width: 55%;
+    transform: translateY(-209px);
+    margin-bottom: -209px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cart > ul {
+    padding-left: 10%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .cart > ul {
+    padding-left: 15%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .cart > ul {
+    padding-left: 20%;
+  }
+}
