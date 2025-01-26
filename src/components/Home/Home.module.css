@@ -6,3 +6,13 @@
   padding: 30px 0;
   gap: 30px;
 }
+
+@media (min-width: 767px) {
+  .home > ul {
+    display: flex;
+    gap: 80px;
+    padding: 50px 20%;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
