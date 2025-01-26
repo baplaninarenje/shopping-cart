@@ -56,39 +56,41 @@ const ProductDetail = () => {
             src={product?.image}
             alt={product?.title}
           />
-          <h3>{product?.title}</h3>
-          <p className={styles.price}>${product?.price}</p>
-          <p>{product?.description}</p>
-          <form onSubmit={handleAddToCart}>
-            <section className={styles.quantity}>
-              <label htmlFor="quantityInput">Quantity:</label>
-              <button
-                className={styles.minus}
-                type="button"
-                disabled={productQuantity === 1 ? true : false}
-                onClick={handleDecrementProductQuantity}
-              >
-                -
+          <section className={styles.productInfo}>
+            <h3>{product?.title}</h3>
+            <p className={styles.price}>${product?.price}</p>
+            <p>{product?.description}</p>
+            <form onSubmit={handleAddToCart}>
+              <section className={styles.quantity}>
+                <label htmlFor="quantityInput">Quantity:</label>
+                <button
+                  className={styles.minus}
+                  type="button"
+                  disabled={productQuantity === 1 ? true : false}
+                  onClick={handleDecrementProductQuantity}
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="quantityInput"
+                  min="1"
+                  value={productQuantity}
+                  onChange={(e) => setProductQuantity(parseInt(e.target.value))}
+                />
+                <button
+                  type="button"
+                  onClick={handleIncrementProductQuantity}
+                  className={styles.plus}
+                >
+                  +
+                </button>
+              </section>
+              <button className={styles.addToCart}>
+                {cartContainsProductId ? 'See in cart' : 'Add To Cart'}
               </button>
-              <input
-                type="number"
-                id="quantityInput"
-                min="1"
-                value={productQuantity}
-                onChange={(e) => setProductQuantity(parseInt(e.target.value))}
-              />
-              <button
-                type="button"
-                onClick={handleIncrementProductQuantity}
-                className={styles.plus}
-              >
-                +
-              </button>
-            </section>
-            <button className={styles.addToCart}>
-              {cartContainsProductId ? 'See in cart' : 'Add To Cart'}
-            </button>
-          </form>
+            </form>
+          </section>
         </>
       )}
     </section>
