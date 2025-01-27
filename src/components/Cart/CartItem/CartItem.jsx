@@ -12,7 +12,7 @@ const CartItem = ({
 }) => {
   const dispatch = useContext(CartDispatchContext);
 
-  const handleRemoveFromCartB = (e) => {
+  const handleRemoveFromCart = (e) => {
     e.preventDefault();
     dispatch({
       type: 'deleted',
@@ -33,7 +33,7 @@ const CartItem = ({
         <h4>{productTitle}</h4>
         <p>US ${productPrice}</p>
         <p>Qty: {productQuantity}</p>
-        <button onClick={handleRemoveFromCartB} className={styles.fakeLink}>
+        <button onClick={handleRemoveFromCart} className={styles.fakeLink}>
           Remove
         </button>
       </div>
