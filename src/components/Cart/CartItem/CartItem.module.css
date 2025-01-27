@@ -29,6 +29,7 @@
   text-decoration: underline;
   margin-top: auto;
   text-align: left;
+  cursor: pointer;
 }
 
 @media (min-width: 767px) {
