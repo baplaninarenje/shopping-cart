@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CartContext } from '../../../contexts/CartContext';
+import { CartDispatchContext } from '../../../contexts/CartContext';
 import PropTypes from 'prop-types';
 import styles from './CartItem.module.css';
 
@@ -10,13 +10,14 @@ const CartItem = ({
   productPrice,
   productQuantity,
 }) => {
-  const { setCartItems } = useContext(CartContext);
+  const dispatch = useContext(CartDispatchContext);
 
-  const handleRemoveFromCart = (e) => {
+  const handleRemoveFromCartB = (e) => {
     e.preventDefault();
-    setCartItems((cartItems) =>
-      cartItems.filter((cartItem) => cartItem.productId !== productId)
-    );
+    dispatch({
+      type: 'deleted',
+      id: productId,
+    });
   };
 
   return (
@@ -32,7 +33,7 @@ const CartItem = ({
         <h4>{productTitle}</h4>
         <p>US ${productPrice}</p>
         <p>Qty: {productQuantity}</p>
-        <button onClick={handleRemoveFromCart} className={styles.fakeLink}>
+        <button onClick={handleRemoveFromCartB} className={styles.fakeLink}>
           Remove
         </button>
       </div>

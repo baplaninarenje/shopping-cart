@@ -2,19 +2,24 @@ import PropTypes from 'prop-types';
 import Header from './../Header/Header.jsx';
 import Footer from './../Footer/Footer.jsx';
 import { ProductsContext } from '../../contexts/ProductsContext.js';
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { getRequestWithNativeFetch } from '../utils/getRequestWithNativeFetch.js';
-import { CartContext } from '../../contexts/CartContext.js';
+import {
+  CartContext,
+  CartDispatchContext,
+} from '../../contexts/CartContext.js';
 import styles from './Layout.module.css';
+import cartItemsReducer from '../utils/reducer.js';
 
 const baseUrl = 'https://fakestoreapi.com';
 
 function Layout({ children }) {
+  const [cartItems, dispatch] = useReducer(cartItemsReducer, []);
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
-  const [cartItems, setCartItems] = useState([]);
 
   const { pathname } = useLocation();
 
@@ -57,11 +62,11 @@ function Layout({ children }) {
           setErrorMessage,
         }}
       >
-        <CartContext.Provider
-          value={{ cartItems, setCartItems, cartItemsCount }}
-        >
-          <Header />
-          <main>{children ?? <Outlet />}</main>
+        <CartContext.Provider value={{ cartItems, cartItemsCount }}>
+          <CartDispatchContext.Provider value={dispatch}>
+            <Header />
+            <main>{children ?? <Outlet />}</main>
+          </CartDispatchContext.Provider>
         </CartContext.Provider>
       </ProductsContext.Provider>
 
