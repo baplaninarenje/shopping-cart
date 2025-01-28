@@ -28,7 +28,6 @@
     justify-content: center;
     border: rgba(17, 24, 32, 0.1) solid 1px;
     border-radius: 12px;
-    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
@@ -36,6 +35,14 @@
   .products li:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .products li a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    padding: 20px;
   }
 }
 
