@@ -20,13 +20,7 @@ const CategoryItem = ({ categoryName }) => {
   const categoryImgSrc = getCategoryImgSrc(categoryName);
   return (
     <section className={styles.category}>
-      <img
-        loading="lazy"
-        width={500}
-        height={500}
-        src={categoryImgSrc}
-        alt={categoryName}
-      />
+      <img loading="lazy" width={500} height={500} src={categoryImgSrc} />
       <h3>{categoryName}</h3>
     </section>
   );
