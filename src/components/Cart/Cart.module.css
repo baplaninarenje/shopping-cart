@@ -3,13 +3,13 @@
   flex-direction: column;
 }
 
-.cart > h3 {
+.cart > h2 {
   padding: 30px 0;
   border-bottom: rgba(17, 24, 32, 0.2) solid 1px;
 }
 
 @media (min-width: 767px) {
-  .cart > h3 {
+  .cart > h2 {
     border: none;
   }
 

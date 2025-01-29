@@ -33,7 +33,7 @@ const Cart = () => {
 
   return (
     <div className={styles.cart}>
-      <h3>Shopping cart</h3>
+      <h2>Shopping cart</h2>
       <Links linkItems={linkItems} />
       {linkItems.length ? (
         <GoToCheckout />
