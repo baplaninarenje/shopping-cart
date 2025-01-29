@@ -33,7 +33,7 @@ const Products = () => {
       {products.length > 0 && (
         <>
           <h2>{categoryName || 'All Products'}</h2>
-          <h4>{products.length} Results</h4>
+          <h3>{products.length} Results</h3>
           <Links linkItems={linkItems} />
         </>
       )}
