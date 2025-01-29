@@ -15,7 +15,7 @@ const NothingFound = () => {
         className={styles.errorImg}
         width={203}
         height={243}
-        src="http://i.ebayimg.com/00/s/MTUwMFgxMjAw/z/8ScAAOSw-ANlzRIW/$_1.PNG?set_id=2"
+        src="https://i.ebayimg.com/00/s/MTUwMFgxMjAw/z/8ScAAOSw-ANlzRIW/$_1.PNG?set_id=2"
         alt="Error"
       />
     </section>
