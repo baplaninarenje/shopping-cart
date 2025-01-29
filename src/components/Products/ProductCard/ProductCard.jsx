@@ -4,13 +4,7 @@ import styles from './ProductCard.module.css';
 const ProductCard = ({ productImgSrc, title, price }) => {
   return (
     <section className={styles.productCard}>
-      <img
-        loading="lazy"
-        width={500}
-        height={500}
-        src={productImgSrc}
-        alt={title}
-      />
+      <img width={500} height={500} src={productImgSrc} alt={title} />
       <div className={styles.productCardText}>
         <p>{title}</p>
         <p>US ${price}</p>
