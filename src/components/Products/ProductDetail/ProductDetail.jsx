@@ -71,7 +71,7 @@ const ProductDetail = () => {
             alt={product?.title}
           />
           <section className={styles.productInfo}>
-            <h3>{product?.title}</h3>
+            <h2>{product?.title}</h2>
             <p className={styles.price}>US ${product?.price}</p>
             <p>{product?.description}</p>
             <form onSubmit={handleAddToCart}>
