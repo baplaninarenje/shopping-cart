@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 const Hamburger = ({ toggleMenu }) => {
   return (
-    <button className={styles.hamburger} onClick={toggleMenu}>
+    <button
+      aria-label="Open menu"
+      className={styles.hamburger}
+      onClick={toggleMenu}
+    >
       <span className={styles.line}></span>
       <span className={styles.line}></span>
       <span className={styles.line}></span>
