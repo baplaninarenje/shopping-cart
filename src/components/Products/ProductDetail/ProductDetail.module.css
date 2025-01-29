@@ -81,7 +81,8 @@ input[type='number'] {
   box-shadow: 0 0 0 0.25rem #b8dcff;
 }
 
-.minus[disabled] {
+.minus[disabled],
+.addToCart[disabled] {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -105,6 +106,12 @@ input[type='number'] {
   width: 10%;
   border: none;
   text-align: center;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 @media (min-width: 767px) {
