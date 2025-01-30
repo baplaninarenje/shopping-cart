@@ -56,15 +56,23 @@ a[href='/cart'] {
   font-size: 2em;
 }
 
+.cartContainer {
+  position: relative;
+  display: inline-block;
+}
+
 .cartIcon {
+  position: absolute;
+  top: -5px;
+  right: -5px;
   background-color: #d50b0b;
   border-radius: 50%;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  width: 1.5em;
+  font-size: 0.75em;
+  padding: 2px 6px;
+  min-width: 1em;
+  text-align: center;
+  line-height: 1;
 }
 
 .menuDesktop {
