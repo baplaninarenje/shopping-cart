@@ -15,7 +15,8 @@ import cartItemsReducer from '../utils/reducer.js';
 const baseUrl = 'https://fakestoreapi.com';
 
 function Layout({ children }) {
-  const [cartItems, dispatch] = useReducer(cartItemsReducer, []);
+  const initialCartState = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const [cartItems, dispatch] = useReducer(cartItemsReducer, initialCartState);
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -49,6 +50,10 @@ function Layout({ children }) {
     };
     fetchDataForProducts(pathname);
   }, [pathname]);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <div className={styles.layout}>
