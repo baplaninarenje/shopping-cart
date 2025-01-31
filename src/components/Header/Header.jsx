@@ -37,7 +37,6 @@ function Header() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="lucide lucide-shopping-cart"
           >
             <circle cx="9" cy="21" r="1" />
             <circle cx="20" cy="21" r="1" />
