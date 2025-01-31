@@ -1,0 +1,9 @@
+The Beerware License (Revision 42):
+-----------------------------------
+
+Copyright (c) 2024 Stefan Ljiljak [https://github.com/baplaninarenje]
+
+"THE BEER-WARE LICENSE" (Revision 42):
+As long as you retain this notice, you can do whatever you want with this stuff. If we meet someday, and you think this stuff is worth it, you can buy me a beer in return.
+
+Stefan Ljiljak
